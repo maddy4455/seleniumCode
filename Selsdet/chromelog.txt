@@ -1,0 +1,168 @@
+[1589070461.732][INFO]: Starting ChromeDriver 81.0.4044.69 (6813546031a4bc83f717a2ef7cd4ac6ec1199132-refs/branch-heads/4044@{#776}) on port 37706
+[1589070461.733][INFO]: Please protect ports used by ChromeDriver and related test frameworks to prevent access by malicious code.
+[1589070462.446][INFO]: [fb7ca8752ca9bc2de5ae9b0ff693afec] COMMAND InitSession {
+   "capabilities": {
+      "firstMatch": [ {
+         "browserName": "chrome",
+         "goog:chromeOptions": {
+            "args": [  ],
+            "extensions": [  ]
+         }
+      } ]
+   },
+   "desiredCapabilities": {
+      "browserName": "chrome",
+      "goog:chromeOptions": {
+         "args": [  ],
+         "extensions": [  ]
+      }
+   }
+}
+[1589070462.449][INFO]: Populating Preferences file: {
+   "alternate_error_pages": {
+      "enabled": false
+   },
+   "autofill": {
+      "enabled": false
+   },
+   "browser": {
+      "check_default_browser": false
+   },
+   "distribution": {
+      "import_bookmarks": false,
+      "import_history": false,
+      "import_search_engine": false,
+      "make_chrome_default_for_user": false,
+      "skip_first_run_ui": true
+   },
+   "dns_prefetching": {
+      "enabled": false
+   },
+   "profile": {
+      "content_settings": {
+         "pattern_pairs": {
+            "https://*,*": {
+               "media-stream": {
+                  "audio": "Default",
+                  "video": "Default"
+               }
+            }
+         }
+      },
+      "default_content_setting_values": {
+         "geolocation": 1
+      },
+      "default_content_settings": {
+         "geolocation": 1,
+         "mouselock": 1,
+         "notifications": 1,
+         "popups": 1,
+         "ppapi-broker": 1
+      },
+      "password_manager_enabled": false
+   },
+   "safebrowsing": {
+      "enabled": false
+   },
+   "search": {
+      "suggest_enabled": false
+   },
+   "translate": {
+      "enabled": false
+   }
+}
+[1589070462.449][INFO]: Populating Local State file: {
+   "background_mode": {
+      "enabled": false
+   },
+   "ssl": {
+      "rev_checking": {
+         "enabled": false
+      }
+   }
+}
+[1589070462.453][INFO]: Launching chrome: "C:\Program Files (x86)\Google\Chrome\Application\chrome.exe" --disable-background-networking --disable-client-side-phishing-detection --disable-default-apps --disable-hang-monitor --disable-popup-blocking --disable-prompt-on-repost --disable-sync --enable-automation --enable-blink-features=ShadowDOMV0 --enable-logging --load-extension="C:\Users\yavyo\AppData\Local\Temp\scoped_dir10832_2005344944\internal" --log-level=0 --no-first-run --password-store=basic --remote-debugging-port=0 --test-type=webdriver --use-mock-keychain --user-data-dir="C:\Users\yavyo\AppData\Local\Temp\scoped_dir10832_1303009028" data:,
+[1589070463.073][INFO]: resolved localhost to ["::1","127.0.0.1"]
+[1589070465.091][INFO]: [fb7ca8752ca9bc2de5ae9b0ff693afec] RESPONSE InitSession {
+   "capabilities": {
+      "acceptInsecureCerts": false,
+      "browserName": "chrome",
+      "browserVersion": "81.0.4044.138",
+      "chrome": {
+         "chromedriverVersion": "81.0.4044.69 (6813546031a4bc83f717a2ef7cd4ac6ec1199132-refs/branch-heads/4044@{#776})",
+         "userDataDir": "C:\\Users\\yavyo\\AppData\\Local\\Temp\\scoped_dir10832_1303009028"
+      },
+      "goog:chromeOptions": {
+         "debuggerAddress": "localhost:50147"
+      },
+      "networkConnectionEnabled": false,
+      "pageLoadStrategy": "normal",
+      "platformName": "windows",
+      "proxy": {
+
+      },
+      "setWindowRect": true,
+      "strictFileInteractability": false,
+      "timeouts": {
+         "implicit": 0,
+         "pageLoad": 300000,
+         "script": 30000
+      },
+      "unhandledPromptBehavior": "dismiss and notify",
+      "webauthn:virtualAuthenticators": true
+   },
+   "sessionId": "fb7ca8752ca9bc2de5ae9b0ff693afec"
+}
+[1589070465.224][INFO]: [fb7ca8752ca9bc2de5ae9b0ff693afec] COMMAND Navigate {
+   "url": "https://www.amazon.in"
+}
+[1589070465.225][INFO]: Waiting for pending navigations...
+[1589070465.229][INFO]: Done waiting for pending navigations. Status: ok
+[1589070465.548][INFO]: Waiting for pending navigations...
+[1589070465.654][SEVERE]: Timed out receiving message from renderer: 0.100
+[1589070465.868][SEVERE]: Timed out receiving message from renderer: 0.100
+[1589070465.970][SEVERE]: Timed out receiving message from renderer: 0.100
+[1589070466.072][SEVERE]: Timed out receiving message from renderer: 0.100
+[1589070466.174][SEVERE]: Timed out receiving message from renderer: 0.100
+[1589070466.266][INFO]: Done waiting for pending navigations. Status: ok
+[1589070466.266][INFO]: [fb7ca8752ca9bc2de5ae9b0ff693afec] RESPONSE Navigate
+[1589070466.307][INFO]: [fb7ca8752ca9bc2de5ae9b0ff693afec] COMMAND DeleteCookie {
+   "name": "madd119h"
+}
+[1589070466.307][INFO]: Waiting for pending navigations...
+[1589070466.309][INFO]: Done waiting for pending navigations. Status: ok
+[1589070466.325][INFO]: Waiting for pending navigations...
+[1589070466.327][INFO]: Done waiting for pending navigations. Status: ok
+[1589070466.327][INFO]: [fb7ca8752ca9bc2de5ae9b0ff693afec] RESPONSE DeleteCookie
+[1589070466.331][INFO]: [fb7ca8752ca9bc2de5ae9b0ff693afec] COMMAND GetCookies {
+
+}
+[1589070466.331][INFO]: Waiting for pending navigations...
+[1589070466.332][INFO]: Done waiting for pending navigations. Status: ok
+[1589070466.336][INFO]: Waiting for pending navigations...
+[1589070466.338][INFO]: Done waiting for pending navigations. Status: ok
+[1589070466.338][INFO]: [fb7ca8752ca9bc2de5ae9b0ff693afec] RESPONSE GetCookies [ {
+   "domain": "www.amazon.in",
+   "expiry": 1591437235.0,
+   "httpOnly": false,
+   "name": "csm-sid",
+   "path": "/",
+   "secure": false,
+   "value": "159-1851973-7101739"
+} ]
+[1589070466.354][INFO]: [fb7ca8752ca9bc2de5ae9b0ff693afec] COMMAND GetCookies {
+
+}
+[1589070466.354][INFO]: Waiting for pending navigations...
+[1589070466.356][INFO]: Done waiting for pending navigations. Status: ok
+[1589070466.359][INFO]: Waiting for pending navigations...
+[1589070466.361][INFO]: Done waiting for pending navigations. Status: ok
+[1589070466.361][INFO]: [fb7ca8752ca9bc2de5ae9b0ff693afec] RESPONSE GetCookies [ {
+   "domain": "www.amazon.in",
+   "expiry": 1591437235.0,
+   "httpOnly": false,
+   "name": "csm-sid",
+   "path": "/",
+   "secure": false,
+   "value": "159-1851973-7101739"
+} ]
