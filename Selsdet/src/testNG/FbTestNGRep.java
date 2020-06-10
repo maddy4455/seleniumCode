@@ -32,7 +32,14 @@ public class FbTestNGRep {
 		 ExtentHtmlReporter reporter=new ExtentHtmlReporter("./reports/extent6.html");
 		 extent = new ExtentReports();
 		 extent.attachReporter(reporter);
-			test= extent.createTest("FBtitleTest");
+			test= extent.createTest("fbtitleTest");
+			
+   System.setProperty("webdriver.chrome.driver","\\C:\\Users\\yavyo\\Desktop\\seleniumproject\\chromedriver.exe\\");
+
+			  driver=new ChromeDriver();
+			  driver.manage().window().maximize();
+			  driver.get("https://www.facebook.com/"); 
+			
 			 
 	  }
 	 
@@ -40,10 +47,7 @@ public class FbTestNGRep {
   @Test
   public void fbtitleTest() {
 	  
-	  System.setProperty("webdriver.chrome.driver","\\C:\\Users\\yavyo\\Desktop\\seleniumproject\\chromedriver.exe\\");	 
-	  driver=new ChromeDriver();
-	  driver.manage().window().maximize();
-	  driver.get("https://www.facebook.com/"); 
+	  
 	  System.out.println("title is" + driver.getTitle());
 	  Assert.assertTrue(driver.getCurrentUrl().contains("maddy"));
 	    

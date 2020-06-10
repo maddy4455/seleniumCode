@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="regressionSuite">
+  <test thread-count="5" name="FirefoxResgressionTest">
+  <parameter name="browser" value="firefox"></parameter>
+    <classes>
+      <class name="MyMavenDemo.MavenDemo.TC_004"/>
+      <class name="MyMavenDemo.MavenDemo.TC_003"/>
+      <class name="MyMavenDemo.MavenDemo.TC_002"/>
+    </classes>
+  </test> <!-- ResgressionTest -->
+  
+   <test thread-count="5" name="ChromeResgressionTest">
+  <parameter name="browser" value="chrome"></parameter>
+    <classes>
+      <class name="MyMavenDemo.MavenDemo.TC_004"/>
+      <class name="MyMavenDemo.MavenDemo.TC_003"/>
+      <class name="MyMavenDemo.MavenDemo.TC_002"/>
+    </classes>
+  </test> <!-- ResgressionTest -->
+</suite> <!-- regressionSuite -->

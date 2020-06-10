@@ -9,7 +9,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 
 
-public class RootApiDemo {
+public class RobotApiDemo {
 
 	public static void main(String[] args) throws AWTException {
 	

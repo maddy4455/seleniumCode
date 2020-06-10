@@ -3,13 +3,14 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="testNG.FbTestNGRep">
+      <class name="extentReports.generateExtentReport">
         <methods>
-          <include name="fbtitleTest"/>
-          <include name="tearDown"/>
-          <include name="setup"/>
+          <include name="getResult"/>
+          <include name="beforeTest"/>
+          <include name="endreport"/>
+          <include name="DemoReportfail"/>
         </methods>
-      </class> <!-- testNG.FbTestNGRep -->
+      </class> <!-- extentReports.generateExtentReport -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
