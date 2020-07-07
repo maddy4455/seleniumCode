@@ -5,7 +5,9 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-public class CustomerRegistration 
+import MyMavenDemo.MavenDemo.BaseTest;
+
+public class CustomerRegistration extends BaseTest
 {
 
 	@FindBy(linkText="Sign in")WebElement signIn;
@@ -45,19 +47,19 @@ public class CustomerRegistration
 	
 		signIn.click();
 		
-		Thread.sleep(2000);
+		//customerEmail.sendKeys("qa456381@gmail.com");
+		// to generate random email 
+		customerEmail.sendKeys(p.getProperty("fname")+p.getProperty("lname")+randomNum()+p.getProperty("domain"));
+		String val = customerEmail.getAttribute("value");
+		System.out.println(val);
 		
-		customerEmail.sendKeys("qa45637@gmail.com");
 		createAccount.click();
-		
-		Thread.sleep(3000);
-		
 		gender1.click();
-		customerFirstnmae.sendKeys("mardy");
-		customerLastname.sendKeys("rafbo");
+		customerFirstnmae.sendKeys("masdy");
+		customerLastname.sendKeys("ragbv");
 		//customerEmailid.sendKeys("qa456378@gmail.com");
 		choosePassword.sendKeys("passwordg");
-		DOB_day.sendKeys("21");
+		DOB_day.sendKeys("20");
 		DOB_month.sendKeys("July");
 		DOB_year.sendKeys("2000");
 		//firstName_address.sendKeys("maddy");
@@ -73,6 +75,8 @@ public class CustomerRegistration
 			
 		
 	}
+
+
 	
 	
 	
