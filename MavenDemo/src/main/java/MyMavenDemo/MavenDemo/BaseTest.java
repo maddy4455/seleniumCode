@@ -4,7 +4,8 @@ import java.io.FileInputStream;
 import java.io.IOException;
 import java.lang.reflect.Method;
 import java.util.Date;
-
+import java.util.Properties;
+import java.util.Random;
 import org.apache.log4j.PropertyConfigurator;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -31,6 +32,7 @@ public class BaseTest {
 	public String testName = null;
 	public static String filePath;
 	public static FileInputStream fis;
+	public static Properties p;
 	public static String projectpath = System.getProperty("user.dir");
 	public static ExtentTest test;
 	public static ExtentTest parentTest;
@@ -53,6 +55,10 @@ public class BaseTest {
 
 		fis = new FileInputStream(projectpath + "//log4jconfig.properties");
 		PropertyConfigurator.configure(fis);
+		
+		fis = new FileInputStream(projectpath+"//data.properties");
+		p=new Properties();
+		p.load(fis);
 
 	}
 
@@ -67,7 +73,7 @@ public class BaseTest {
 			option.addArguments("--disable-notifications");
 
 			driver = new ChromeDriver(option);
-			
+
 		} else if (browser.equals("firefox")) {
 			System.setProperty("webdriver.gecko.driver", "C:\\Users\\yavyo\\Desktop\\seleniumproject\\geckodriver.exe");
 
@@ -104,11 +110,20 @@ public class BaseTest {
 
 		} else if (result.getStatus() == ITestResult.SUCCESS) {
 			test.log(Status.PASS, "The Test Method Named as : " + result.getName() + " is Passed");
+			
 
 		} else if (result.getStatus() == ITestResult.SKIP) {
 			test.log(Status.SKIP, "The Test Method Named as : " + result.getName() + " is Skipped");
 		}
-
+	}
+	//to generaterandom numbers
+		public int randomNum() 
+		{
+		Random r = new Random();
+		int rnum = r.nextInt(999999);
+			return rnum;
+		
+		
 	}
 
 	@AfterTest
