@@ -46,7 +46,7 @@ public class BaseTest {
 		Date dt = new Date();
 		filePath = dt.toString().replace(':', '_').replace(' ', '_') + ".html";
 
-		ExtentHtmlReporter reporter = new ExtentHtmlReporter("./reports/extent6.html" + filePath);
+		ExtentHtmlReporter reporter = new ExtentHtmlReporter("./reports/extentRep.html" + filePath);
 		report = new ExtentReports();
 		report.attachReporter(reporter);
 		report.setSystemInfo("OS", "Windows");
@@ -55,9 +55,9 @@ public class BaseTest {
 
 		fis = new FileInputStream(projectpath + "//log4jconfig.properties");
 		PropertyConfigurator.configure(fis);
-		
-		fis = new FileInputStream(projectpath+"//data.properties");
-		p=new Properties();
+
+		fis = new FileInputStream(projectpath + "//data.properties");
+		p = new Properties();
 		p.load(fis);
 
 	}
@@ -101,33 +101,41 @@ public class BaseTest {
 
 	@AfterMethod
 	public void tearDown(ITestResult result) throws IOException {
+		
 		if (result.getStatus() == ITestResult.FAILURE) {
 			test.log(Status.FAIL, "The test method Named as : " + result.getName() + " is Failed");
 			test.log(Status.FAIL, "Test failure : " + result.getThrowable());
 
-			String temp = Utility.getScreenshot(driver);
-			test.fail(result.getThrowable().getMessage(), MediaEntityBuilder.createScreenCaptureFromPath(temp).build());
-
+			//String temp = Utility.getScreenshot(driver);
+			test.fail(result.getThrowable().getMessage(), 
+					MediaEntityBuilder.createScreenCaptureFromPath(Utility.getScreenshot(driver)).build());
+			
 		} else if (result.getStatus() == ITestResult.SUCCESS) {
 			test.log(Status.PASS, "The Test Method Named as : " + result.getName() + " is Passed");
-			
 
+			test.pass("Test is Passed ",
+					MediaEntityBuilder.createScreenCaptureFromPath(Utility.getScreenshot(driver)).build());
+			
 		} else if (result.getStatus() == ITestResult.SKIP) {
 			test.log(Status.SKIP, "The Test Method Named as : " + result.getName() + " is Skipped");
 		}
 	}
-	//to generaterandom numbers
-		public int randomNum() 
-		{
+
+	// to generaterandom numbers
+	public int randomNum() {
 		Random r = new Random();
 		int rnum = r.nextInt(999999);
-			return rnum;
-		
-		
+		return rnum;
+
 	}
 
 	@AfterTest
-	public void cleanUp() {
+	public void cleanUp() throws Exception {
+		
 		report.flush();
+		
+		Thread.sleep(3000);
+		driver.close();
+		
 	}
 }
