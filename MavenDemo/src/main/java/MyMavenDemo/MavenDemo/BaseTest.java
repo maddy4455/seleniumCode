@@ -100,28 +100,28 @@ public class BaseTest {
 	}
 
 	@AfterMethod
-	public void tearDown(ITestResult result) throws IOException {
-		
+	public  void tearDown(ITestResult result) throws IOException {
+
 		if (result.getStatus() == ITestResult.FAILURE) {
 			test.log(Status.FAIL, "The test method Named as : " + result.getName() + " is Failed");
 			test.log(Status.FAIL, "Test failure : " + result.getThrowable());
 
-			//String temp = Utility.getScreenshot(driver);
-			test.fail(result.getThrowable().getMessage(), 
+			// String temp = Utility.getScreenshot(driver);
+			test.fail(result.getThrowable().getMessage(),
 					MediaEntityBuilder.createScreenCaptureFromPath(Utility.getScreenshot(driver)).build());
-			
+
 		} else if (result.getStatus() == ITestResult.SUCCESS) {
 			test.log(Status.PASS, "The Test Method Named as : " + result.getName() + " is Passed");
-
-			test.pass("Test is Passed ",
+			test.log(Status.PASS, "Test success : " + result.getInstance());
+			test.pass("Test is Passed",
 					MediaEntityBuilder.createScreenCaptureFromPath(Utility.getScreenshot(driver)).build());
-			
+
 		} else if (result.getStatus() == ITestResult.SKIP) {
 			test.log(Status.SKIP, "The Test Method Named as : " + result.getName() + " is Skipped");
 		}
 	}
 
-	// to generaterandom numbers
+	// to generate random numbers
 	public int randomNum() {
 		Random r = new Random();
 		int rnum = r.nextInt(999999);
@@ -130,12 +130,12 @@ public class BaseTest {
 	}
 
 	@AfterTest
-	public void cleanUp() throws Exception {
-		
+	public void cleanUp() throws InterruptedException {
+
 		report.flush();
-		
-		Thread.sleep(3000);
-		driver.close();
-		
+
+		Thread.sleep(2000);
+		driver.quit();
+
 	}
 }
