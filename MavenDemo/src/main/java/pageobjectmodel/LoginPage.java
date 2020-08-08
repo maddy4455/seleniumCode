@@ -24,8 +24,6 @@ public class LoginPage
 		
 		signIn.click();
 		
-		Thread.sleep(2000);
-		
 		customerEmail.sendKeys("qa6754466@gmail.com");
 		customerPassword.sendKeys("password");
 		submitLogin.click();
