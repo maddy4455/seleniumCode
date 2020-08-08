@@ -30,7 +30,6 @@ public class LoginParameterTest extends BaseTest {
 		
 		driver.findElement(By.name("password")).clear();
 		driver.findElement(By.name("password")).sendKeys(password);
-		
 		driver.findElement(By.name("btnLogin")).click();
 		
 		 try{ 
