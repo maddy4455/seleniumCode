@@ -57,7 +57,7 @@ public class LoginParameterTest extends BaseTest {
 
 		Object[][] data = new Object[4][2];
 
-		// invalid UN&PW (in data first one is row and second one is coloumn)
+		// invalid UN&PW (In data first one is row and second one is coloumn)
 		data[0][0] = "mngrk27657056";
 		data[0][1] = "AtYdagE";
 
