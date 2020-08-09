@@ -27,20 +27,24 @@ public class LoginParameterTest extends BaseTest {
 
 		driver.findElement(By.name("uid")).clear();
 		driver.findElement(By.name("uid")).sendKeys(userId);
+		String userIDdata = driver.findElement(By.name("uid")).getAttribute("value");
 		
 		driver.findElement(By.name("password")).clear();
 		driver.findElement(By.name("password")).sendKeys(password);
+		String passWordData = driver.findElement(By.name("password")).getAttribute("value");
 		driver.findElement(By.name("btnLogin")).click();
+		
 		
 		 try{ 
 			    
 		       	Alert alt = driver.switchTo().alert();
 				String actualBoxMsg = alt.getText(); // get content of the Alter Message
 				alt.accept();
+				
 				String expBoxMsg = "User or Password is not valid";	
 				assertEquals(actualBoxMsg,expBoxMsg);
 				test.log(Status.INFO, "invalid credentials thrown failed message as: "+actualBoxMsg);
-				test.log(Status.FAIL, "invalid credentials");
+				test.log(Status.FAIL, "invalid credentials "+" id: "+userIDdata +" paswword: "+passWordData);
 			}    
 		    catch (NoAlertPresentException Ex){ 
 		    	String actualTitle = driver.getTitle();
@@ -48,6 +52,7 @@ public class LoginParameterTest extends BaseTest {
 		    	assertEquals(actualTitle,expTitle);
 		    	test.log(Status.INFO, "login successfull: "+actualTitle);
 		    	test.log(Status.PASS, "successfully entered into manager home page");
+		    	test.log(Status.PASS, "valid credentials "+"id: "+ userIDdata +" paswword: "+passWordData);
 	        } 
 	}
 
@@ -57,11 +62,11 @@ public class LoginParameterTest extends BaseTest {
 		Object[][] data = new Object[4][2];
 
 		// invalid UN&PW (In data first one is row and second one is coloumn)
-		data[0][0] = "mngrk27657056";
-		data[0][1] = "AtYdagE";
+		data[0][0] = "mngrjnbgk27657056";
+		data[0][1] = "AtYdgtfjuagE";
 
 		// invalid UN&Valid PW
-		data[1][0] = "mngr276570q";
+		data[1][0] = "mngr78kkhy276570";
 		data[1][1] = "AtYdagE";
 
 		// valid UN& invalid PW
